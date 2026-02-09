@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ойгон — Отчёт (v0.1)</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="page">
+    <div class="card">
+      <header class="header">
+        <h1>Ойгон — Отчёт (v0.1)</h1>
+        <p class="subtitle">Запишите короткое видео-отчёт. Данные остаются локально.</p>
+      </header>
+
+      <section class="status" aria-live="polite">
+        <p id="statusText">Готово к записи. Нажмите «Снять видео».</p>
+        <p id="errorText" class="error" role="alert"></p>
+      </section>
+
+      <section class="preview-grid">
+        <div class="preview">
+          <h2>Live preview</h2>
+          <div class="video-shell">
+            <video id="liveVideo" autoplay playsinline muted></video>
+            <p class="placeholder" id="livePlaceholder">Видео с камеры появится здесь</p>
+          </div>
+        </div>
+        <div class="preview">
+          <h2>Playback preview</h2>
+          <div class="video-shell">
+            <video id="playbackVideo" controls playsinline></video>
+            <p class="placeholder" id="playbackPlaceholder">Записанное видео появится здесь</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="actions">
+        <button id="recordButton" class="primary">Снять видео</button>
+        <button id="downloadButton" class="secondary" disabled>Скачать видео</button>
+        <button id="reportButton" class="secondary" disabled>Отправить отчёт</button>
+      </section>
+
+      <section class="report">
+        <p id="reportMessage" class="report-message"></p>
+      </section>
+
+      <footer class="hint">
+        <p>Поддерживаются Chrome и мобильные браузеры. Если запись недоступна, мы сообщим об этом.</p>
+      </footer>
+    </div>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
